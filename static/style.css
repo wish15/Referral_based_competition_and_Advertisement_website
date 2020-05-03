@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    }
+    
+    *:focus {
+    outline: none;
+    }
+    body {
+    font-family: Arial;
+    background-color: #3498DB;
+    padding: 50px;
+    }
+    .login {
+    margin: 20px auto;
+    width: 300px;
+    }
+    .login-screen {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 5px
+    }
+    
+    .app-title {
+    text-align: center;
+    color: #777;
+    }
+    
+    .login-form {
+    text-align: center;
+    }
+    .control-group {
+    margin-bottom: 10px;
+    }
+    
+    input {
+    text-align: center;
+    background-color: #ECF0F1;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0;
+    width: 250px;
+    transition: border .5s;
+    }
+    
+    input:focus {
+    border: 2px solid #3498DB;
+    box-shadow: none;
+    }
+    
+    .btn {
+    border: 2px solid transparent;
+    background: #3498DB;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    }
+    
+    .btn:hover {
+    background-color: #2980B9;
+    }
+    
+    .login-link {
+    font-size: 12px;
+    color: #444;
+    display: block;
+    margin-top: 12px;
+    }
+    .header{
+        width: 100%;
+        background: rgb(16, 95, 148);
+        height: 50px;
+
+    }
+    .btnn {
+        
+        border: 2px solid transparent;
+        background: #3498DB;
+        color: #ffffff;
+        font-size: 16px;
+        line-height: 20px;
+        padding: 10px 0;
+        text-decoration: none;
+        text-shadow: none;
+        border-radius: 5px;
+        box-shadow: none;
+        transition: 0.25s;
+        /* display: block; */
+        width: px;
+        margin: 10;
+        }
+        
+        .btnn:hover {
+        background-color: #040f06;
+        }
+    .container{
+        width: 100%;
+        margin: auto;
+        margin-top: 50;
+        height: 70%;
+    } 
+    .info {
+        text-align: center;
+        background-color: #FFF;
+        /* padding: 20px; */
+        border-radius: 5px;
+        line-height: 100px;
+        width: 62%;
+         height: 100%; 
+        float: left;
+        }
+    .Leaders-Board{
+        text-align: center;
+        /* margin-left: 10px; */
+        width: auto;
+        height: 100%;
+        border-radius: 5px;
+        float: right;
+        font-size: 12px;
+        color: #444;    
+        background-color: #FFF;
+    }
+    .clear{
+        clear: both;
+    }
+    #cname{
+        font-size: 16px;
+        color: #444; 
+        padding: 20px;
+    }
+    th{
+        font-size: 12px;
+        color:  rgb(126, 123, 123);
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        line-height: 10px;
+    }
+    .lol{
+        color: red;
+    }
+    .referral{
+        padding: 450px;
+    }

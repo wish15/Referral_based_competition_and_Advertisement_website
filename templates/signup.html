@@ -1,0 +1,47 @@
+<header>
+	<div class="login-form">
+    	<a class="btn" href="/">Honeymint </a>
+    	<a class="btn" href="/about">About</a>
+	</div>
+</header>
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+
+
+<form action="/register" method="POST">
+<div class="login">
+<div class="login-screen">
+<div class="app-title">
+<lable class="login-field">Signup</lable>
+<br>
+<label class="login-field-icon lol" for="login-name">{{msg}}</label>
+</div>
+<div class="login-form">
+
+
+<br>
+<div class="control-group">
+		<input type="text" class="login-field" value="" placeholder="First_Name" name="first_name">
+<label class="login-field-icon fui-user" for="login-name"></label></div>
+
+<div class="control-group">
+		<input type="text" class="login-field" value="" placeholder="Last_Name" name="last_name">
+<label class="login-field-icon fui-user" for="login-name"></label></div>
+<div class="control-group">
+	<input type="text" class="login-field" value="" placeholder="Email" name="email">
+<label class="login-field-icon fui-user" for="login-name"></label></div>
+<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="Address" name="address">
+<label class="login-field-icon fui-user" for="login-name"></label></div>
+<div class="control-group">
+	<input type="text" class="login-field" value="" placeholder="Contact_no." name="phone_no">
+<label class="login-field-icon fui-user" for="login-name"></label></div>
+<div class="control-group">
+	<input type="text" class="login-field" placeholder="Referral" name="referral" value = {{referral}}>
+<label class="login-field-icon fui-user" for="login-name"></label></div>
+<input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
+</div>
+</div>
+</div>
+</form>
+{% endblock %}

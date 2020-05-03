@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<header>
+    <a class=btnn href="/">Honeymint </a>
+    <a class=btnn href="/about">About</a>
+    <a class=btnn href="/signup">Signup</a>
+</header>
+
+{% block body %}
+
+
+<div class="login login-field">
+ <div class="login-screen">
+    <h2> Wellcome {{name}}!!</h2>
+    <br>
+    You Have Referred to {{referral_count}} Peoples
+    <br>
+    Keep referring to win exiting prizes..
+    <br>
+    <br>
+    <a class="btn btn-primary btn-large btn-block" href="https://twitter.com/intent/tweet?text=Click%20on%20the%20below%20link%20to%20be%20a%20part%20of%20honeymint%20contest%20to%20win%20exiting%20prizes[Quick%20Tip]%20http%3A%2F%2F127.0.0.1%3A5000%2Fsignup%2F{{referral_code}}&original_referer=https://127.0.0.1/"> click here to tweet</a>
+    <br>
+    <a class="btn btn-primary btn-large btn-block" href="https://www.facebook.com"> click here post</a>
+
+</div>
+</div>
+</form>
+{% endblock %}

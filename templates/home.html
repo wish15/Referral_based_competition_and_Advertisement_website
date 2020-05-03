@@ -1,0 +1,62 @@
+<!-- navbar home signup
+bgcontent
+bgpicture
+leadersboard
+form for seraching your referral count -->
+<header>
+    <a class=btnn href="/">Honeymint </a>
+    <a class=btnn href="/about">About</a>
+    <a class=btnn href="/signup">Signup</a>
+</header>
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<div class='container'>
+    <div class="info">
+        Wellcome to the Honemint contest
+        participate in the contest and win exiting prizes
+        <br>
+            space for poster
+        <br>
+            space for more info.
+    </div>
+    <div class="login-field Leaders-Board">
+        <h3 > Leaders-Board Top 10 </h3>
+        <table >
+            <tr >
+                <th id="cname">Name</th>
+                <th id="cname">Email_id</th>
+                <th id="cname">Referrals</th>
+            </tr>
+            {% for user in users %}
+                <tr >
+                    <th>{{user['first_name']+" "+user['last_name']}}</th>
+                    <th>{{user['email']}}</th>
+                    <th>{{user['referral_count']}}</th>
+                </tr>
+            {% endfor %}
+
+        </table>
+        <!-- {% for i in users %}
+            {{i['first_name']}}
+        {% endfor %} -->
+</div>
+<div class='login-field referral'>
+    <form action="/your_referrals" method="POST">
+        <div class="login">
+        <div class="login-screen">
+        <div class="app-title">
+        <h1>Know your referrals count</h1>
+        </div>
+        <div class="login-form">
+        <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="Name" name="name">
+        <label class="login-field-icon fui-user" for="login-name"></label></div>
+        <div class="control-group">
+                        <input type="text" class="login-field" value="" placeholder="Email" name="email">
+        <label class="login-field-icon fui-lock" for="login-pass"></label></div>
+        <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
+        </div>
+        </div>
+        </div>
+    </form>        
+</div>
+
