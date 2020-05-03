@@ -4,14 +4,16 @@ from flask_mail import Mail,Message
 
 # flask app configuration for mail
 app=Flask(__name__)
+sender_email='enter your email address'
+mail_password='enter your password'
 app.config.update(
     DEBUG=True,
     #EMAIL SETTINGS
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME = 'vishalrochlanimh@gmail.com',
-    MAIL_PASSWORD = 'Radhasoamiji@123'
+    MAIL_USERNAME = sender_email,
+    MAIL_PASSWORD = mail_password
     )
 mail=Mail(app)
 
@@ -32,7 +34,7 @@ def generate_referral_code(first_name):
 # function to send mail through provided mail_id and password
 def send_mail(username,referral,email):
     try:
-        msg = Message("Honeymint!! Registation Complete",sender="vishalrochlanimh@gmail.com",recipients=[email])
+        msg = Message("Honeymint!! Registation Complete",sender=sender_email,recipients=[email])
         msg.html = render_template('register_mail.html', username=username,referral=referral)        
         mail.send(msg)
         return 'Mail sent'
