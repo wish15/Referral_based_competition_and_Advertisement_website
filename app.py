@@ -109,12 +109,12 @@ def register():
     user_exists=len(list(current_user))
     if(user_exists):
         return signup(referred_by,"Phone number alredy exists")
-    User_Collection.insert_one(new_user)
     referred_by_user=User_Collection.find_one({'referral_code':referred_by})
     if(referred_by_user):
         User_Collection.update({'referral_code':referred_by},{'$inc':{'referral_count':1}})
     elif(referred_by!=""):
         return signup_without_referral('Wrong referral code put right referral or leave it blank')
+    User_Collection.insert_one(new_user)
     send_mail(first_name,user_referral_code,email)
     return home()
 
