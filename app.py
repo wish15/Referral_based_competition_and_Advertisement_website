@@ -30,9 +30,9 @@ def generate_referral_code(first_name):
     return new_reffral_code
 
 # function to send mail through provided mail_id and password
-def send_mail(username,referral):
+def send_mail(username,referral,email):
     try:
-        msg = Message("Honeymint!! Registation Complete",sender="vishalrochlanimh@gmail.com",recipients=["vishalrochlanics@gmail.com"])
+        msg = Message("Honeymint!! Registation Complete",sender="vishalrochlanimh@gmail.com",recipients=[email])
         msg.html = render_template('register_mail.html', username=username,referral=referral)        
         mail.send(msg)
         return 'Mail sent'
@@ -115,7 +115,7 @@ def register():
         User_Collection.update({'referral_code':referred_by},{'$inc':{'referral_count':1}})
     elif(referred_by!=""):
         return signup_without_referral('Wrong referral code put right referral or leave it blank')
-    send_mail(first_name,user_referral_code)
+    send_mail(first_name,user_referral_code,email)
     return home()
 
 if __name__ == "__main__":
