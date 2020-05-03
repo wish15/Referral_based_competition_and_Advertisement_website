@@ -1,4 +1,3 @@
-import random
 import pymongo
 from flask import Flask,flash,redirect,render_template,request
 from flask_mail import Mail,Message
@@ -11,8 +10,8 @@ app.config.update(
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME = 'Enter your email address',
-    MAIL_PASSWORD = 'Enter your password'
+    MAIL_USERNAME = 'vishalrochlanimh@gmail.com',
+    MAIL_PASSWORD = 'Radhasoamiji@123'
     )
 mail=Mail(app)
 
@@ -112,11 +111,11 @@ def register():
         return signup(referred_by,"Phone number alredy exists")
     User_Collection.insert_one(new_user)
     referred_by_user=User_Collection.find_one({'referral_code':referred_by})
-    if(referred_by_user and referred_by!=""):
+    if(referred_by_user):
         User_Collection.update({'referral_code':referred_by},{'$inc':{'referral_count':1}})
-    else:
+    elif(referred_by!=""):
         return signup_without_referral('Wrong referral code put right referral or leave it blank')
-            
+    send_mail(first_name,user_referral_code)
     return home()
 
 if __name__ == "__main__":
